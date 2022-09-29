@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'block14.html' %}
+
+<div class="fh5co-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Explicação</h2>
+                <p>She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains.</p>
+
+                <p>198 West 21th Street, Suite 721 <br> New York NY 10016</p>
+                <p><a href="#">info@domain.com</a></p>
+                <p><a href="#">+123 456 7890</a></p>
+            </div>
+            <div class='col col-md-12 mb-4 mx-auto0'>
+                <div class='card bg-dark'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>{{ title }}</h5>
+                        <p class='card-text'>
+                            <table class='card'>
+                            <form method='POST' action ='.' enctype='multipart/form-data'> {% csrf_token %}
+                                {{ form.as_table }}
+                                <button type='submit'>Send</button>
+                            </form>
+                        </table>
+                        </p>
+                        
+                        <p></p>
+                        {% if not detail %}
+                            <a href="{{ blog_post.get_absolute_url }}">View</a>
+                        {% endif %}
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

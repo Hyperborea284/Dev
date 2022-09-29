@@ -1,0 +1,107 @@
+{% load static %}
+
+<div class="fh5co-section">
+	<div class="container">
+		<div class="row">
+
+			{% if blog_post.image %}
+			<div class="col-md-12 mb-4 mx-auto0">
+				<img src='{{ blog_post.image.url }}' class='card-img-top'/>
+				<p></p>
+				<p></p>
+			{% endif %}
+
+			<div class='col-md-12 mb-4 mx-auto0'>
+				<div class='card {% if not blog_post.publish_date %} bg-grey text-light {% endif %} bg-dark text-light'>
+					<div class='card-body'>
+						<h5 class='card-title'>{{ blog_post.title }}</h5>
+						<p class='card-text'>
+							<small class="text-muted">{{ blog_post.publish_date }}</small>
+							{% if truncate %}
+								{{ blog_post.content|linebreaks|truncatewords:30 }}
+							{% else%}
+								{{ blog_post.content|linebreaks }}
+							{% endif %}
+						</p>
+			
+						{% if not detail %}
+							{% if not blog_post.publish_date %} Draft {% endif %}
+							<a href="{{ blog_post.get_absolute_url }}">View</a>
+						{% endif %}
+					<p></p>
+					<p></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fh5co-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 mb-4 mx-auto0">
+				<div class='card-body'>
+					{% if blog_post.wordcloud %}
+					<div class="col-md-10">
+						<img src='{{ blog_post.wordcloud.url }}' class='card-img-top'/>
+					{% endif %}
+				<p></p>
+				<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fh5co-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 mb-4 mx-auto0">
+				<div class='card-body'>
+					{% if blog_post.barplot %}
+					<div class="col-md-10">
+						<img src='{{ blog_post.barplot.url }}' class='card-img-top'/>
+					{% endif %}
+				<p></p>
+				<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fh5co-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 mb-4 mx-auto0">
+				<div class='card-body'>
+					{% if blog_post.sents_1 %}
+					<div class="col-md-10">
+						<img src='{{ blog_post.sents_1.url }}' class='card-img-top'/>
+					{% endif %}
+				<p></p>
+				<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fh5co-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 mb-4 mx-auto0">
+				<div class='card-body'>
+					{% if blog_post.sents_1 %}
+					<div class="col-md-10">
+						<img src='{{ blog_post.reinert.url }}' class='card-img-top'/>
+					{% endif %}
+				<p></p>
+				<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

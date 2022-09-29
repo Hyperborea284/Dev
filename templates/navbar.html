@@ -1,0 +1,48 @@
+<nav class="navbar-collapse bg-dark">
+	<div class="container-fluid">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm">
+						<li class="nav-item">
+							<a style="color:white;font-size:20px" class="nav-link" href="{% url 'home' %}">Home</a>
+						</li>
+					</div>
+
+					<div class="col-sm">
+						<li class="nav-item">
+							<a style="color:white;font-size:20px" class="nav-link" href="/blog-new">Blog</a>
+						</li>
+					</div>
+					
+					{% if user.is_authenticated %}
+					<div class="col-sm">
+						<li class="nav-item">
+							<a style="color:white;font-size:20px" href="{% url 'account_logout' %}">Sair</a>
+						</li>
+					</div>
+		
+					{% else %}
+					<div class="col-sm">
+						<li class="nav-item">
+							<a style="color:white;font-size:20px" href="{% url 'account_login' %}">Entrar</a>
+						</li>
+					</div>
+		
+					<div class="col-sm">
+						<li class="nav-item">
+							<a style="color:white;font-size:20px" href="{% url 'account_signup' %}">Cadastro</a>
+						</li>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+
+			<form class="d-flex" action='/search'>
+				<input class="form-control me-2" type="search" name='q' placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success" type="submit">Search</button>
+			</form>
+		</div>
+	</div>	
+</nav>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'block15.html' %}
+
+<div class="fh5co-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Campos obrigatórios :</h1>
+                <p></p>
+                <h3>Título : contendo no nome da postagem</h3>
+                <h3>Slug : caminho para a postagem, sem simbolos e espaços</h3>
+                <h3>Content : Texto em UTF-8 para ser analisado</h3>
+ 
+                <p></p>
+                <p></p>
+                <h1>Campos opcionais :</h1>
+                <p></p>
+                <h3>Imagem : Faz upload de uma imagem png ou jpeg para ilustrar a postagem</h3>
+                <h3>Publish date : Data da publicação no formato 2021-09-14 00:12:00 Necessário para o mecanismo de busca</h3>
+
+            </div>
+            <div class='col col-md-12 mb-4 mx-auto0'>
+                <div class='card bg-dark'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>{{ title }}</h5>
+                        <p class='card-text'>
+                            <table class='card'>
+                            <form method='POST' action ='.' enctype='multipart/form-data'> {% csrf_token %}
+                                {{ form.as_table }}
+                                <button type='submit'>Send</button>
+                            </form>
+                        </table>
+                        </p>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
