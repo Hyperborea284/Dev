@@ -2,7 +2,7 @@
 Aplicação Web em Django para análise linguística computacional em R e Python3
 
 
-A base do site Backend em R e Python3 realiza as análises usando linguística computacional. O frontend usa o framework Django Python3 e faz a mediação entre o banco da daso em SQL e os blocos HTML.
+A base do site Backend em R e Python3 realiza as análises usando linguística computacional. O frontend usa o framework Django Python3 e faz a mediação entre o banco da dados em SQL e os blocos HTML.
 
 Desenvolvido como prova de conceito | Produto Educacional Mestrado UEM - Profciamb
 
